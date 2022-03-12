@@ -13,10 +13,10 @@ public-clients: false
 head-as-boolean: false
 mgmt-debug:
   show-request-path: true
-#batch:
-#  - tag: package-common-type
-tag: package-resources
-#  - tag: package-management
+batch:
+ - tag: package-common-type
+ - tag: package-resources
+ - tag: package-management
 ```
 
 ### Tag: package-common-type

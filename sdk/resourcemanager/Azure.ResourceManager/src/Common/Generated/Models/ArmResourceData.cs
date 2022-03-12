@@ -23,7 +23,6 @@ namespace Azure.ResourceManager.Models
         /// <summary> Initializes a new instance of ArmResourceData. </summary>
         /// <param name="id"> Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}. </param>
         /// <param name="name"> The name of the resource. </param>
-<<<<<<< HEAD
         /// <param name="resourceType"> The type of the resource. E.g. &quot;Microsoft.Compute/virtualMachines&quot; or &quot;Microsoft.Storage/storageAccounts&quot;. </param>
         /// <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
         [SerializationConstructor]
@@ -32,16 +31,6 @@ namespace Azure.ResourceManager.Models
             Id = id;
             Name = name;
             ResourceType = resourceType;
-=======
-        /// <param name="type"> The type of the resource. E.g. &quot;Microsoft.Compute/virtualMachines&quot; or &quot;Microsoft.Storage/storageAccounts&quot;. </param>
-        /// <param name="systemData"> Azure Resource Manager metadata containing createdBy and modifiedBy information. </param>
-        [SerializationConstructor]
-        protected ArmResourceData(ResourceIdentifier id, string name, ResourceType type, SystemData systemData)
-        {
-            Id = id;
-            Name = name;
-            Type = type;
->>>>>>> b106eec3a2c4ccf4f9e67966fa4cc80abbfe7244
             SystemData = systemData;
         }
 
@@ -50,11 +39,7 @@ namespace Azure.ResourceManager.Models
         /// <summary> The name of the resource. </summary>
         public string Name { get; }
         /// <summary> The type of the resource. E.g. &quot;Microsoft.Compute/virtualMachines&quot; or &quot;Microsoft.Storage/storageAccounts&quot;. </summary>
-<<<<<<< HEAD
         public ResourceType ResourceType { get; }
-=======
-        public ResourceType Type { get; }
->>>>>>> b106eec3a2c4ccf4f9e67966fa4cc80abbfe7244
         /// <summary> Azure Resource Manager metadata containing createdBy and modifiedBy information. </summary>
         public SystemData SystemData { get; }
     }
