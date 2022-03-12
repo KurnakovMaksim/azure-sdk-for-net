@@ -25,9 +25,16 @@ namespace Azure.Security.Attestation
         /// <param name="pipeline"> The HTTP pipeline for sending and receiving REST requests and responses. </param>
         /// <param name="instanceUrl"> The attestation instance base URI, for example https://mytenant.attest.azure.net. </param>
         /// <param name="apiVersion"> Api Version. </param>
+<<<<<<< HEAD
         /// <exception cref="ArgumentNullException"> <paramref name="pipeline"/>, <paramref name="instanceUrl"/> or <paramref name="apiVersion"/> is null. </exception>
         public AttestationRestClient(HttpPipeline pipeline, string instanceUrl, string apiVersion = "2020-10-01")
         {
+=======
+        /// <exception cref="ArgumentNullException"> <paramref name="clientDiagnostics"/>, <paramref name="pipeline"/>, <paramref name="instanceUrl"/> or <paramref name="apiVersion"/> is null. </exception>
+        public AttestationRestClient(ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, string instanceUrl, string apiVersion = "2020-10-01")
+        {
+            ClientDiagnostics = clientDiagnostics ?? throw new ArgumentNullException(nameof(clientDiagnostics));
+>>>>>>> b106eec3a2c4ccf4f9e67966fa4cc80abbfe7244
             _pipeline = pipeline ?? throw new ArgumentNullException(nameof(pipeline));
             _instanceUrl = instanceUrl ?? throw new ArgumentNullException(nameof(instanceUrl));
             _apiVersion = apiVersion ?? throw new ArgumentNullException(nameof(apiVersion));

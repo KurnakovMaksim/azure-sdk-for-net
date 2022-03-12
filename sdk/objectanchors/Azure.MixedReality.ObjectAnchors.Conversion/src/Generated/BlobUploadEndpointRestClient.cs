@@ -25,9 +25,16 @@ namespace Azure.MixedReality.ObjectAnchors.Conversion
         /// <param name="pipeline"> The HTTP pipeline for sending and receiving REST requests and responses. </param>
         /// <param name="endpoint"> server parameter. </param>
         /// <param name="apiVersion"> Api Version. </param>
+<<<<<<< HEAD
         /// <exception cref="ArgumentNullException"> <paramref name="pipeline"/> is null. </exception>
         public BlobUploadEndpointRestClient(HttpPipeline pipeline, Uri endpoint = null, string apiVersion = "0.2-preview.1")
         {
+=======
+        /// <exception cref="ArgumentNullException"> <paramref name="clientDiagnostics"/> or <paramref name="pipeline"/> is null. </exception>
+        public BlobUploadEndpointRestClient(ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, Uri endpoint = null, string apiVersion = "0.2-preview.1")
+        {
+            ClientDiagnostics = clientDiagnostics ?? throw new ArgumentNullException(nameof(clientDiagnostics));
+>>>>>>> b106eec3a2c4ccf4f9e67966fa4cc80abbfe7244
             _pipeline = pipeline ?? throw new ArgumentNullException(nameof(pipeline));
             _endpoint = endpoint ?? new Uri("");
             _apiVersion = apiVersion;

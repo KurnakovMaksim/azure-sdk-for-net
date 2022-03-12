@@ -27,7 +27,11 @@ namespace Azure.ResourceManager.Cdn.Tests
             ResourceGroup rg = await CreateResourceGroup(subscription, "testRg-");
             string afdProfileName = Recording.GenerateAssetName("AFDProfile-");
             Profile afdProfile = await CreateAfdProfile(rg, afdProfileName, CdnSkuName.StandardAzureFrontDoor);
+<<<<<<< HEAD
             await afdProfile.DeleteAsync(true);
+=======
+            await afdProfile.DeleteAsync(WaitUntil.Completed);
+>>>>>>> b106eec3a2c4ccf4f9e67966fa4cc80abbfe7244
             var ex = Assert.ThrowsAsync<RequestFailedException>(async () => await afdProfile.GetAsync());
             Assert.AreEqual(404, ex.Status);
         }

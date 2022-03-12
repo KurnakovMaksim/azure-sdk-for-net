@@ -25,9 +25,16 @@ namespace Azure.Monitor.OpenTelemetry.Exporter
         /// <summary> Initializes a new instance of ApplicationInsightsRestClient. </summary>
         /// <param name="pipeline"> The HTTP pipeline for sending and receiving REST requests and responses. </param>
         /// <param name="host"> Breeze endpoint: https://dc.services.visualstudio.com. </param>
+<<<<<<< HEAD
         /// <exception cref="ArgumentNullException"> <paramref name="pipeline"/> or <paramref name="host"/> is null. </exception>
         public ApplicationInsightsRestClient(HttpPipeline pipeline, string host = "https://dc.services.visualstudio.com")
         {
+=======
+        /// <exception cref="ArgumentNullException"> <paramref name="clientDiagnostics"/>, <paramref name="pipeline"/> or <paramref name="host"/> is null. </exception>
+        public ApplicationInsightsRestClient(ClientDiagnostics clientDiagnostics, HttpPipeline pipeline, string host = "https://dc.services.visualstudio.com")
+        {
+            ClientDiagnostics = clientDiagnostics ?? throw new ArgumentNullException(nameof(clientDiagnostics));
+>>>>>>> b106eec3a2c4ccf4f9e67966fa4cc80abbfe7244
             _pipeline = pipeline ?? throw new ArgumentNullException(nameof(pipeline));
             _host = host ?? throw new ArgumentNullException(nameof(host));
         }

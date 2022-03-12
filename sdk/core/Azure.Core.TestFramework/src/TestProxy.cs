@@ -120,7 +120,11 @@ namespace Azure.Core.TestFramework
             }
 
             var options = new TestProxyClientOptions();
+<<<<<<< HEAD
             Client = new TestProxyRestClient(HttpPipelineBuilder.Build(options), new Uri($"http://{IpAddress}:{_proxyPortHttp}"));
+=======
+            Client = new TestProxyRestClient(new ClientDiagnostics(options), HttpPipelineBuilder.Build(options), new Uri($"http://{IpAddress}:{_proxyPortHttp}"));
+>>>>>>> b106eec3a2c4ccf4f9e67966fa4cc80abbfe7244
 
             // For some reason draining the standard output stream is necessary to keep the test-proxy process healthy. Otherwise requests
             // start timing out. This only seems to happen when not specifying a port.
